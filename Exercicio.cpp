@@ -21,7 +21,7 @@ int main() {
         medias[i] = (notas1[i] + notas2[i] + notas3[i])/3;
     }
 
-    int maior_media = 0;
+    float maior_media = 0;
     for (int i = 1; i < qnt_alunos; i++) {
         if (medias[i] > medias[maior_media]) {
             maior_media = i;
