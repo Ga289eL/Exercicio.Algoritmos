@@ -36,7 +36,7 @@ int main() {
         
     }
     
-    cout << "\n . . . \n";
+    cout << "\n...\n";
     
     cout << "\nALUNO\tN1\tN2\tN3\tMEDIA\tSITUACAO\n";
 
@@ -51,7 +51,7 @@ int main() {
         }
     }
     
-    cout << "\n . . . \n";
+    cout << "\n...\n";
 
     cout << "\nAluno com maior media: " << nomes[maior_media] << " (" << medias[maior_media] << ")\n";
 
