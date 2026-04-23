@@ -34,8 +34,8 @@ int main() {
         
     }
     
-    cout << "\n...\n";
-    cout << "\nALUNO\tN1\tN2\tN3\tMEDIA\tSITUACAO\n";
+    cout <<"\n...\n";
+    cout <<"\nALUNO\tN1\tN2\tN3\tMEDIA\tSITUACAO\n";
 
     for (int i=0; i<qnt_alunos; i++) {
         
