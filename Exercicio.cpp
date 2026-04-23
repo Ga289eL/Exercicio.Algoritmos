@@ -12,20 +12,24 @@ int main() {
     float medias[qnt_alunos];
 
     for (int i = 0; i < qnt_alunos; i++) {
+        
         cout << "\nDigite o nome do aluno " << i + 1 << ": ";
         cin >> nomes[i];
         
         cout << "Digite as 3 notas de " << nomes[i] << ": ";
         cin >> notas1[i] >> notas2[i] >> notas3[i];
         
-        medias[i] = (notas1[i] + notas2[i] + notas3[i])/3;
+        medias[i] = (notas1[i] + notas2[i] + notas3[i]) / 3;
+        
     }
 
-    float maior_media = 0;
+    int maior_media = 0;
     for (int i = 1; i < qnt_alunos; i++) {
+        
         if (medias[i] > medias[maior_media]) {
             maior_media = i;
         }
+        
     }
     
     cout << "\n . . . \n";
@@ -33,12 +37,14 @@ int main() {
     cout << "\nALUNO\tN1\tN2\tN3\tMEDIA\tSITUACAO\n";
 
     for (int i = 0; i < qnt_alunos; i++) {
+        
         cout << nomes[i] <<"\t"<< notas1[i] <<"\t"<< notas2[i] <<"\t"<< notas3[i] <<"\t" << medias[i] <<"\t";
 
-        if (medias[i] >= 7)
+        if (medias[i] >= 7){
             cout << "Aprovado\n";
-        else
+        }else {
             cout << "Reprovado\n";
+        }
     }
     
     cout << "\n . . . \n";
