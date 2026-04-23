@@ -23,7 +23,7 @@ int main() {
         cout << "Digite as 3 notas de " << nomes[i] << ": ";
         cin >> notas1[i] >> notas2[i] >> notas3[i];
         
-        medias[i] = (notas1[i] + notas2[i] + notas3[i]) / 3;
+         medias[i] = calcularMedia(notas1[i], notas2[i], notas3[i]);
         
     }
 
