@@ -1,100 +1,49 @@
 #include <iostream>
 using namespace std;
 
-int main (){
+int main() {
     int qnt_alunos;
-    string alunos[5];
-    float nota_aluno1[3], nota_aluno2[3], nota_aluno3[3], nota_aluno4[3], nota_aluno5[3];
-    float n1, n2, n3;
-    
-    cout << "Quantos alunos serão cadastrados?: ";     
-    cin >> qnt_alunos;   
-    
-    for (int i = 0; i < qnt_alunos; i++){ 
-        cout << "Digite o nome do aluno " << i + 1 << ": ";
-        cin >> alunos[i];
+
+    cout << "Quantos alunos deseja cadastrar? ";
+    cin >> qnt_alunos;
+
+    string nomes[qnt_alunos];
+    float notas1[qnt_alunos], notas2[qnt_alunos], notas3[qnt_alunos];
+    float medias[qnt_alunos];
+
+    for (int i = 0; i < qnt_alunos; i++) {
+        cout << "\nDigite o nome do aluno " << i + 1 << ": ";
+        cin >> nomes[i];
         
-        cout << "Digite as três notas do aluno " << alunos[i] << ": ";
-        cin >> n1 >> n2 >> n3;
+        cout << "Digite as 3 notas de " << nomes[i] << ": ";
+        cin >> notas1[i] >> notas2[i] >> notas3[i];
         
-        if (i==0){
-            nota_aluno1[0] = n1;
-            nota_aluno1[1] = n2;
-            nota_aluno1[2] = n3;
-        }else if (i==1){
-            nota_aluno2[0] = n1;
-            nota_aluno2[1] = n2;
-            nota_aluno2[2] = n3;
-        }else if (i==2){
-            nota_aluno3[0] = n1;
-            nota_aluno3[1] = n2;
-            nota_aluno3[2] = n3;
-        }else if (i==3){
-            nota_aluno4[0] = n1;
-            nota_aluno4[1] = n2;
-            nota_aluno4[2] = n3;
-        }else{
-            nota_aluno5[0] = n1;
-            nota_aluno5[1] = n2;
-            nota_aluno5[2] = n3;
+        medias[i] = (notas1[i] + notas2[i] + notas3[i])/3;
+    }
+
+    int maior_media = 0;
+    for (int i = 1; i < qnt_alunos; i++) {
+        if (medias[i] > medias[maior_media]) {
+            maior_media = i;
         }
     }
     
-    float media_aluno1, media_aluno2, media_aluno3, media_aluno4, media_aluno5;
+    cout << "\n . . . \n";
     
-    media_aluno1 = (nota_aluno1[0] + nota_aluno1[1] + nota_aluno1[2]) / 3;
-    media_aluno2 = (nota_aluno2[0] + nota_aluno2[1] + nota_aluno2[2]) / 3;
-    media_aluno3 = (nota_aluno3[0] + nota_aluno3[1] + nota_aluno3[2]) / 3;
-    media_aluno4 = (nota_aluno4[0] + nota_aluno4[1] + nota_aluno4[2]) / 3;
-    media_aluno5 = (nota_aluno5[0] + nota_aluno5[1] + nota_aluno5[2]) / 3;
-    
-    string re_1, re_2, re_3, re_4, re_5;
-    
-    if(media_aluno1>=6){
-        re_1 = "Aprovado";
-    }else {
-        re_1 = "Reprovado";
-    }
-    if(media_aluno2>=6){
-        re_2 = "Aprovado";
-    }else {
-        re_2 = "Reprovado";
-    }
-    if(media_aluno3>=6){
-        re_3 = "Aprovado";
-    }else {
-        re_3 = "Reprovado";
-    }
-    if(media_aluno4>=6){
-        re_4 = "Aprovado";
-    }else {
-        re_4 = "Reprovado";
-    }
-    if(media_aluno5>=6){
-        re_5 = "Aprovado";
-    }else {
-        re_5 = "Reprovado";
+    cout << "\nALUNO\tN1\tN2\tN3\tMEDIA\tSITUACAO\n";
+
+    for (int i = 0; i < qnt_alunos; i++) {
+        cout << nomes[i] <<"\t"<< notas1[i] <<"\t"<< notas2[i] <<"\t"<< notas3[i] <<"\t" << medias[i] <<"\t";
+
+        if (medias[i] >= 7)
+            cout << "Aprovado\n";
+        else
+            cout << "Reprovado\n";
     }
     
-    cout << endl << " . . . " << endl;
-    cout << "ALUNO" << "\tN1" << "\tN2" << "\tN3" << "\tMÉDIA" << "\tSITUAÇÃO" << endl;
-    
-    if (media_aluno1>=0){
-    cout << alunos[0] <<"\t"<< nota_aluno1[0] <<"\t"<< nota_aluno1[1] <<"\t"<< nota_aluno1[2] <<"\t"<< media_aluno1 <<"\t"<< re_1 << endl;
-    }
-    if (media_aluno2>=0){
-    cout << alunos[1] <<"\t"<< nota_aluno2[0] <<"\t"<< nota_aluno2[1] <<"\t"<< nota_aluno2[2] <<"\t"<< media_aluno2 <<"\t"<< re_2 << endl;
-    }
-    if (media_aluno3>=0){
-    cout << alunos[2] <<"\t"<< nota_aluno3[0] <<"\t"<< nota_aluno3[1] <<"\t"<< nota_aluno3[2] <<"\t"<< media_aluno3 <<"\t"<< re_3 << endl;
-    }
-    if (media_aluno4>=0){
-    cout << alunos[3] <<"\t"<< nota_aluno4[0] <<"\t"<< nota_aluno4[1] <<"\t"<< nota_aluno4[2] <<"\t"<< media_aluno4 <<"\t"<< re_4 << endl;
-    }
-    if (media_aluno5>=0){
-    cout << alunos[4] <<"\t"<< nota_aluno5[0] <<"\t"<< nota_aluno5[1] <<"\t"<< nota_aluno5[2] <<"\t"<< media_aluno5 <<"\t"<< re_5 << endl;
-    }
-    cout << endl << " . . . ";
-    
+    cout << "\n . . . \n";
+
+    cout << "\nAluno com maior media: " << nomes[maior_media] << " (" << medias[maior_media] << ")\n";
+
     return 0;
 }
