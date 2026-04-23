@@ -84,7 +84,7 @@ int main (){
     }
     if (media_aluno2>=0){
     cout << alunos[1] <<"\t"<< nota_aluno2[0] <<"\t"<< nota_aluno2[1] <<"\t"<< nota_aluno2[2] <<"\t"<< media_aluno2 <<"\t"<< re_2 << endl;
-    
+    }
     if (media_aluno3>=0){
     cout << alunos[2] <<"\t"<< nota_aluno3[0] <<"\t"<< nota_aluno3[1] <<"\t"<< nota_aluno3[2] <<"\t"<< media_aluno3 <<"\t"<< re_3 << endl;
     }
